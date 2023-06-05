@@ -231,6 +231,7 @@ class OIDCAuthenticationBackend(ModelBackend):
             self.OIDC_OP_TOKEN_ENDPOINT,
             data=payload,
             auth=auth,
+            headers={'content-type': 'application/x-www-form-urlencoded'},
             verify=self.get_settings("OIDC_VERIFY_SSL", True),
             timeout=self.get_settings("OIDC_TIMEOUT", None),
             proxies=self.get_settings("OIDC_PROXY", None),
